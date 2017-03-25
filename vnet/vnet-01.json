@@ -72,7 +72,7 @@
           {
             "name": "data",
             "properties": {
-              "addressPrefix": "10.0.4.0/27"
+              "addressPrefix": "10.0.5.0/27"
             }
           },
           
