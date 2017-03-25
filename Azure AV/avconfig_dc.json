@@ -1,0 +1,17 @@
+{
+"AntimalwareEnabled": true,
+"RealtimeProtectionEnabled": true,
+"ScheduledScanSettings": {
+"isEnabled": true,
+"day": 1,
+"time": 120,
+"scanType": "Full"
+},
+
+"Exclusions": 
+{
+"Extensions": "",
+"Paths": "f:\\windows\\ntds\\Ntds.dit;f:\\windows\\ntds\\Ntds.pat;f:\\windows\\ntds\\EDB*.log;f:\\windows\\ntds\\Res*.log;f:\\windows\\ntds\\Edb*.jrs;f:\\windows\\ntds\\temp.edb;f:\\windows\\ntds\\edb.chk;f:\\Ntfrs\\jet\\sys\\edb.chk;f:\\Ntfrs\\jet\\Ntfrs.jdb;f:\\Ntfrs\\jet\\log\\*.log;f:\\Ntfrs\\edb*.log;F:\\Windows\\SYSVOL\\staging areas\\Nntfrs_cmp*.*;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.adm;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.admx;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.adml;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\Registry.pol;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.aas;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.inf;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\scripts.ini;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\*.ins;F:\\Windows\\SYSVOL\\sysvol\\deploy.atlasfx.com\\oscfilter.ini;%systemdrive%\\System Volume Information\\DFSR\\*.*;%systemroot%\\System32\\Dns\\*.log;%systemroot%\\System32\\Dns\\*.dns",
+"Processes": ""
+}
+}
