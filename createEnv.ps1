@@ -1,11 +1,13 @@
-﻿#Script: createEnv.ps1
+#Script: createEnv.ps1
 #Function: McShera Consulting/Westcoast Create Azure Training Lab
 #Date: 25/03/17
 #Createdby: Gavin McShera - gavin@mcshera.com
 ##########################################################
 #References: 
-#Network Security Groups Template using mspnp/template-building-blocks from the AzureCAT - patterns & practices (PnP) Template Building Blocks project.
+# Note 1:
+#Uses the Network Security Groups Template using mspnp/template-building-blocks from the AzureCAT - patterns & practices (PnP) Template Building Blocks project.
 #provides a series of Azure Resource Manager templates you can use to deploy a collection of resources that, together, make up a building block for larger solutions.
+#Source: https://raw.githubusercontent.com/mspnp/template-building-blocks/master/scenarios/networkSecurityGroups/azuredeploy.json 
 ##########################################################
 
 #Variabes
