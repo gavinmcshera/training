@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+
+   "virtualNetworkName": {
+      "type": "string",
+      "defaultValue": "vnet00",
+      "metadata": {
+        "description": "Arbitrary name for the Azure Virtual Network"
+      }
+    },
+    "azureVNetAddressPrefix": {
+      "type": "string",
+      "defaultValue": "10.255.0.0/24",
+      "metadata": {
+        "description": "CIDR block representing the address space of the Azure VNet"
+      }
+    }
+  },
+  
+  "variables": {
+    "api-version": "2015-06-15"
+  },
+  "resources": [
+    {
+      "apiVersion": "[variables('api-version')]",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetworkName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('azureVNetAddressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "mgmt",
+            "properties": {
+              "addressPrefix": "10.255.0.0/27"
+            }
+          }
+     
+        ]
+      }
+    }
+  ]
+}
