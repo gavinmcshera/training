@@ -1,3 +1,2 @@
-# training
-Parameter Files used in for the training programs.
-Build out the defined environments.
+# McShera Consulting/WestCoast - Elite Partner Training
+Sample files for JSON template examples.  Used to build out part of the sample environment
