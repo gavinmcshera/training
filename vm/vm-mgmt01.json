@@ -4,15 +4,13 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
-      "value": "gmsie",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
     },
     "adminPassword": {
       "type": "securestring",
-      "value": "Ldlapis4vr",
-      "metadata": {
+        "metadata": {
         "description": "Password for the Virtual Machine."
       }
     },
