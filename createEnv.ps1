@@ -9,7 +9,7 @@
 ##########################################################
 
 #Variabes
-$subscription = "McShera Consulting"
+$subscription = "<your subscription Name>"
 $ManagementResourceGroupNetwork = "mgmt-rg"
 $ProductionResourceGroupNetwork = "prd-network-rg"
 $Location = "North Europe"
