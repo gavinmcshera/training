@@ -24,7 +24,7 @@
               "sourceAddressPrefix": "Internet",
               "destinationAddressPrefix": "10.255.0.10/32",
               "sourcePortRange": "*",
-              "destinationPortRange": "3389",
+              "destinationPortRange": "3390",
               "access": "Allow",
               "protocol": "Tcp"
             }
