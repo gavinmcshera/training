@@ -17,28 +17,201 @@
           ],
           "networkInterfaces": [ ],
           "securityRules": [
-            {
-              "name": "RDPAllow",
-              "direction": "Inbound",
-              "priority": 4000,
-              "sourceAddressPrefix": "Internet",
-              "destinationAddressPrefix": "10.255.0.10/32",
-              "sourcePortRange": "*",
-              "destinationPortRange": "3390",
-              "access": "Allow",
-              "protocol": "Tcp"
-            },
-            {
-              "name": "RDPAllow2",
-              "direction": "Inbound",
-              "priority": 4010,
-              "sourceAddressPrefix": "Internet",
-              "destinationAddressPrefix": "10.255.0.10/32",
-              "sourcePortRange": "*",
-              "destinationPortRange": "3390",
-              "access": "Allow",
-              "protocol": "Tcp"
-            }
+                     {
+                        "name": "RDP-to-Jump",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "10.0.255.7/32",
+                            "access": "Allow",
+                            "priority": 4000,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "ELB-Website-In",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "8080",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "10.0.255.4/31",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "HTTP-In",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "80",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "10.0.255.4/31",
+                            "access": "Allow",
+                            "priority": 200,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "Deny-VNET-Inbound",
+                        "properties": {
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "10.0.255.0/24",
+                            "access": "Deny",
+                            "priority": 4096,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "Deny-VNET-Outbound",
+                        "properties": {
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "10.0.255.0/24",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Deny",
+                            "priority": 4096,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "Allow-APP01-In",
+                        "properties": {
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "10.0.1.5/32",
+                            "destinationAddressPrefix": "10.0.255.4/31",
+                            "access": "Allow",
+                            "priority": 400,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "Allow-APP01-Out",
+                        "properties": {
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "10.0.255.4/31",
+                            "destinationAddressPrefix": "10.0.1.5/32",
+                            "access": "Allow",
+                            "priority": 400,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "WEB-to-MGMT-RDP-out",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.255.4/31",
+                            "destinationAddressPrefix": "10.0.255.7/32",
+                            "access": "Allow",
+                            "priority": 3010,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "MGMT-to-WEB-in",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.255.7/32",
+                            "destinationAddressPrefix": "10.0.255.4/31",
+                            "access": "Allow",
+                            "priority": 3010,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "APP01-to-MGMT-in",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.1.5/32",
+                            "destinationAddressPrefix": "10.0.255.7/32",
+                            "access": "Allow",
+                            "priority": 3020,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "MGMT-to-APP01-out",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.255.7/32",
+                            "destinationAddressPrefix": "10.0.1.5/32",
+                            "access": "Allow",
+                            "priority": 3020,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "WEB-toMGMT-in",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.255.4/31",
+                            "destinationAddressPrefix": "10.0.255.7/32",
+                            "access": "Allow",
+                            "priority": 3000,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "MGMT-to-WEB-out",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "10.0.255.7/32",
+                            "destinationAddressPrefix": "10.0.255.4/31",
+                            "access": "Allow",
+                            "priority": 3000,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "APP01-to-LB-in",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "10.0.1.5/32",
+                            "destinationAddressPrefix": "10.0.255.10/32",
+                            "access": "Allow",
+                            "priority": 2000,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "LB-to-APP-out",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "10.0.255.10/32",
+                            "destinationAddressPrefix": "10.0.1.5/32",
+                            "access": "Allow",
+                            "priority": 2000,
+                            "direction": "Outbound"
+                        }
+                    }
           ]
         }
       ]
