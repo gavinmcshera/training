@@ -1,4 +1,4 @@
-{
+1{
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
@@ -30,7 +30,7 @@
 
               "name": "RDPAllow2",
               "direction": "Inbound",
-              "priority": 4000,
+              "priority": 4010,
               "sourceAddressPrefix": "Internet",
               "destinationAddressPrefix": "10.255.0.10/32",
               "sourcePortRange": "*",
