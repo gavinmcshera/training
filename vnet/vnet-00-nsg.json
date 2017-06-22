@@ -11,9 +11,9 @@
     "networkSecurityGroupsSettings": {
       "value": [
         {
-          "name": "mgmt-nsg",
+          "name": "dmz-nsg",
           "subnets": [
-            "mgmt"
+            "dmz"
           ],
           "networkInterfaces": [ ],
           "securityRules": [
