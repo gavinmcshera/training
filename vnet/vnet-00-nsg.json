@@ -13,7 +13,7 @@
         {
           "name": "dmz-nsg",
           "subnets": [
-            "mgmt"
+            "dmz"
           ],
           "networkInterfaces": [ ],
           "securityRules": [
