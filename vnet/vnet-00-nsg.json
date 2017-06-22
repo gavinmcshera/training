@@ -4,8 +4,8 @@
   "parameters": {
     "virtualNetworkSettings": {
       "value": {
-        "name": "vnet00",
-        "resourceGroup": "mgmt-rg"
+        "name": "vnet01",
+        "resourceGroup": "prd-network-rg"
       }
     },
     "networkSecurityGroupsSettings": {
