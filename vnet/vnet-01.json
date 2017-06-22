@@ -21,8 +21,7 @@
     "api-version": "2015-06-15"
   },  "resources": [
     {
-      "apiVersion": "[variables('api-version')]",
-      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "[variables('api-version')]",      "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('virtualNetworkName')]",
       "location": "[resourceGroup().location]",
       "properties": {
@@ -73,7 +72,7 @@
             }
           }
 
-          }
+          
         ]
       }
     }
