@@ -27,4 +27,4 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $ManagementResourceGroupNe
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ProductionResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-01.json
 
 #Create NSG for MGMT Network
-New-AzureRmResourceGroupDeployment -ResourceGroupName $ManagementResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/mspnp/template-building-blocks/master/scenarios/networkSecurityGroups/azuredeploy.json -templateParameterUriFromTemplate https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-00-nsg.json
+New-AzureRmResourceGroupDeployment -ResourceGroupName $ProductionResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/mspnp/template-building-blocks/master/scenarios/networkSecurityGroups/azuredeploy.json -templateParameterUriFromTemplate https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-00-nsg.json
