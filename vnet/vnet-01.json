@@ -35,49 +35,43 @@
           {
             "name": "GatewaySubnet",
             "properties": {
-              "addressPrefix": "10.0.255.224/27"
+              "addressPrefix": "10.0.0.0/24"
             }
           },
 
           {
-            "name": "adds",
+            "name": "dmz",
             "properties": {
-              "addressPrefix": "10.0.1.0/24"
+              "addressPrefix": "10.0.255.0/24"
             }
           },
 
           {
             "name": "core",
             "properties": {
-              "addressPrefix": "10.0.2.0/24"
+              "addressPrefix": "10.0.1.0/24"
             }
           },
 
           {
             "name": "web",
             "properties": {
-              "addressPrefix": "10.0.3.0/24"
+              "addressPrefix": "10.0.2.0/24"
             }
           },
 
           {
             "name": "app",
             "properties": {
-              "addressPrefix": "10.0.4.0/24"
+              "addressPrefix": "10.0.3.0/24"
             }
           },
           {
             "name": "sql",
             "properties": {
-              "addressPrefix": "10.0.5.0/24"
+              "addressPrefix": "10.0.4.0/24"
             }
-          },
-          
-          {
-            "name": "ApplicationGatewaySubnet",
-            "properties": {
-              "addressPrefix": "10.0.254.224/29"
-            }
+          }
 
           }
         ]
