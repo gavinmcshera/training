@@ -4,8 +4,8 @@
   "parameters": {
     "virtualNetworkSettings": {
       "value": {
-        "name": "vnet10",
-        "resourceGroup": "demo-rg"
+        "name": "vnet00",
+        "resourceGroup": "mgmt-rg"
       }
     },
     "networkSecurityGroupsSettings": {
@@ -13,7 +13,7 @@
         {
           "name": "dmz-nsg",
           "subnets": [
-            "dmz"
+            "mgmt"
           ],
           "networkInterfaces": [ ],
           "securityRules": [
