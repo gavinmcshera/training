@@ -1,4 +1,5 @@
-﻿#Script: createNetwork.ps1
+
+#Script: createNetwork.ps1
 #Function: McShera Consulting/Westcoast Azure Training Lab
 #Date: 25/03/17
 #Createdby: Gavin McShera - gavin@mcshera.com
@@ -26,5 +27,6 @@ New-AzureRmResourceGroup -Name $ProductionResourceGroupNetwork -Location $Locati
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ManagementResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-00.json
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ProductionResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-01.json
 
+#-TemplateParameterFile
 #Create NSG for MGMT Network
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ProductionResourceGroupNetwork -TemplateUri https://raw.githubusercontent.com/mspnp/template-building-blocks/master/scenarios/networkSecurityGroups/azuredeploy.json -templateParameterUriFromTemplate https://raw.githubusercontent.com/gavinmcshera/training/master/vnet/vnet-00-nsg.json
