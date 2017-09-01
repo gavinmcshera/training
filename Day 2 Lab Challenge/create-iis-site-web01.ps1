@@ -61,7 +61,7 @@
           <div style="border: 2px solid #8AC007; border-radius: 25px; padding: 20px; margin: 10px; width: 650px;">
             <b>Image File Linked from the Internet</b>:<br />
             <br />
-            <img src="http://mcshera.com/wp-content/uploads/2015/11/cropped-cropped-Gav-Logo-Final-512.jpg" alt="McShera Consulting"/>
+            <img src="http://mcshera.com/wp-content/uploads/2017/08/sublogo_gms.jpg" alt="McShera Consulting"/>
             </div>
         </div>
       </form>
