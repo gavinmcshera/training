@@ -1,5 +1,5 @@
 #Script: convertManagedDisksSingleVM.ps1
-#Function: McShera Consulting/Westcoast Azure Training Lab
+#Function: McShera Consulting Azure Training Lab
 #Date: 15/09/2017
 #Createdby: Gavin McShera - gavin@mcshera.com
 ##########################################################
@@ -11,7 +11,7 @@ Write-Host "This process will stop the virtual machine before converting to mana
 Write-Host "This process will only work for single VMs not in availability sets"
 
 #Variabes
-$subscription = Read-Host -Prompt "Enter Subscription Name"
+$subscription = "McShera Consulting"
 $ResourceGroupName = Read-Host -Prompt "Enter target VM resource group"
 $vmName = Read-Host -Prompt "Enter target VM resource group"
 
