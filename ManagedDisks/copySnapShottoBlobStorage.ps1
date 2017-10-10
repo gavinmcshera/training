@@ -33,3 +33,7 @@ $destContext = New-AzureStorageContext –StorageAccountName $storageAccountName
 #Start the copy process.  This can take some time.
 Start-AzureStorageBlobCopy -AbsoluteUri $absoluteUri -DestContainer $destContainer -DestContext $destContext -DestBlob $blobName
 
+#Check the status of the copy
+#$blob=Get-AzureStorageBlob -Context $destContext -Container "images"
+#Get-AzureStorageBlobCopyState -CloudBlob $blob.ICloudBlob -Context $destContext
+
